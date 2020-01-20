@@ -19,7 +19,8 @@ from django.conf.urls import url
 from django.conf import settings
 from django.conf.urls.static import static
 import sys
-from kgqa import views
+from kgqa import views, rest_disease
 urlpatterns = [
     url(r'^kgqa-demo$', views.search_post),
+    url(r'^kgqa-api/asks$', rest_disease.search_question),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
